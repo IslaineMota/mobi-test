@@ -13,7 +13,6 @@ const Home = () => {
                 .then(response => response.json())
                 .then(data => {
                     if (data[0] > 0) {
-                        /* setInfo(data[1]) */
                         // eslint-disable-next-line no-undef
                         setInfo([...new Set(data[1].map((d) => d.nome))]);
                     }

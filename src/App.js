@@ -1,7 +1,7 @@
 import React from 'react'
-import './App.css';
 import { BrowserRouter } from 'react-router-dom';
 import AuthContextProvider from './AuthContext';
+import GlobalStyle from './GlobalStyle';
 import MainRoutes from './MainRoutes';
 
 function App() {
@@ -10,6 +10,7 @@ function App() {
       <BrowserRouter>
         <MainRoutes />
       </BrowserRouter>
+      <GlobalStyle/>
     </AuthContextProvider>
   );
 }
