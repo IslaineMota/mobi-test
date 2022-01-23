@@ -1,4 +1,5 @@
 import React from 'react';
+import { Input } from '../../pages/Home/styled';
 
 const SearchInput = ({ onChange, value }) => {
     function handleChange (e) {
@@ -6,7 +7,7 @@ const SearchInput = ({ onChange, value }) => {
     }
 
     return (
-        <input
+        <Input 
             placeholder='Insira o nome ou parte do nome da escola a buscar'
             type='search'
             onChange={handleChange}
