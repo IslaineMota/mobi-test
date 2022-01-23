@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import SearchInput from '../../components/Inputs/SearchInput';
+import SearchInput from './SearchInput';
 import { FiSearch } from "react-icons/fi";
-import {Container, Btn, ContainSearch, Title} from './styled';
+import {Container, Btn, ContainSearch, Title, List} from './styled';
 
 const Home = () => {
     const [info, setInfo] = useState([]);
@@ -31,7 +31,7 @@ const Home = () => {
                     onChange={(str) => setName(str)} />
             </ContainSearch>
             <ul>
-                {info.map((schools, index) => <li key={index}>{schools}</li>)}
+                {info.map((schools, index) => <List key={index}>{schools}</List>)}
             </ul>
         </Container>
     )

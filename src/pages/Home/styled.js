@@ -41,3 +41,16 @@ export const Btn = styled.label`
     border:none;
     margin: auto;
 `;
+
+export const List = styled.li`
+    font-size: 16px;
+    padding: 5px 20px;
+    font-weight: bold;
+
+    @media screen and (max-width: 1100px) {
+        font-size: 14px;
+  }
+}
+`;
+ 
+
