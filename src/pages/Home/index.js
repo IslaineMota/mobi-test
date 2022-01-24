@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import SearchInput from '../../components/Inputs/SearchInput';
-import './styled'
+import SearchInput from './SearchInput';
+import { FiSearch } from "react-icons/fi";
+import {Container, Btn, ContainSearch, Title, List} from './styled';
 
 const Home = () => {
     const [info, setInfo] = useState([]);
@@ -21,18 +22,18 @@ const Home = () => {
     }, [name]);
 
     return (
-        <>
-            <div>
+        <Container>
+            <Title>Busca</Title>
+            <ContainSearch>
+                <Btn><FiSearch size={30} color="#9fa8da"/></Btn>
                 <SearchInput
                     value={name}
                     onChange={(str) => setName(str)} />
-            </div>
-            <div>
-                <ul>
-                    {info.map((schools, index) => <li key={index}>{schools}</li>)}
-                </ul>
-            </div>
-        </>
+            </ContainSearch>
+            <ul>
+                {info.map((schools, index) => <List key={index}>{schools}</List>)}
+            </ul>
+        </Container>
     )
 };
 
