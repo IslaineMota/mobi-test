@@ -1,11 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import {Btn} from './style'
 
 const RegisterRouteBtn = () => {
     const navigate = useNavigate();
 
     return (
-        <button onClick={() => navigate('/register')}>Casdastre uma nova escola</button>
+        <Btn onClick={() => navigate('/register')}>Casdastre uma nova escola</Btn>
     )
 }
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SearchInput from './SearchInput';
 import { FiSearch } from "react-icons/fi";
-import {Container, Btn, ContainSearch, Title, List} from './styled';
+import {Container,ImageMagnifyingGlass, ContainSearch, Title, List} from './style';
 import RegisterRouteBtn from './RegisterRouteBtn';
 
 const Home = () => {
@@ -26,7 +26,7 @@ const Home = () => {
         <Container>
             <Title>Busca</Title>
             <ContainSearch>
-                <Btn><FiSearch size={30} color="#9fa8da"/></Btn>
+                <ImageMagnifyingGlass><FiSearch size={30} color="#9fa8da"/></ImageMagnifyingGlass>
                 <SearchInput
                     value={name}
                     onChange={(str) => setName(str)} />

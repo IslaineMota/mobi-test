@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input } from './styled';
+import { Input } from './style';
 
 const SearchInput = ({ onChange, value }) => {
     function handleChange (e) {
