@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import SearchInput from './SearchInput';
 import { FiSearch } from "react-icons/fi";
 import {Container, Btn, ContainSearch, Title, List} from './styled';
+import RegisterRouteBtn from './RegisterRouteBtn';
 
 const Home = () => {
     const [info, setInfo] = useState([]);
@@ -30,6 +31,7 @@ const Home = () => {
                     value={name}
                     onChange={(str) => setName(str)} />
             </ContainSearch>
+                <RegisterRouteBtn/>
             <ul>
                 {info.map((schools, index) => <List key={index}>{schools}</List>)}
             </ul>
