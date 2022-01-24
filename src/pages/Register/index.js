@@ -1,7 +1,22 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+
+const useStateWithLocalStorage = localStorageKey => {
+    const [values, setValues] = useState(
+      localStorage.getItem(localStorageKey) || ''
+    );
+  
+    useEffect(() => {
+      localStorage.setItem(localStorageKey, JSON.stringify(values));
+    }, [values]);
+  
+    return [values, setValues];
+  };
+  
 
 function Register() {
-    const [values, setValues] = useState('')
+    const [values, setValues] = useStateWithLocalStorage(
+        'myValueInLocalStorage'
+      );
     const handleOnchange = e => {
         const { value, name } = e.target
         setValues({
@@ -12,13 +27,15 @@ function Register() {
 
     const submitForm = e => {
         e.preventDefault();
+            localStorage.setValues('scholl', JSON.stringify(values.school));
+            localStorage.setValues('director', values.director);
       };
 
     return (
         <>
             <form onSubmit={submitForm}>
                 <h1>Cadastro de Escolas</h1>
-                <input type='text' name='school' value={values.school} placeholder='Nome da escola' required onChange={handleOnchange}></input>
+                 <input type='text' name='school' value={values.school} placeholder='Nome da escola' required onChange={handleOnchange}></input>
                 <input type='text' name='director' value={values.director} placeholder='Nome do diretor' onChange={handleOnchange}></input>
                 <select required onChange={handleOnchange} name='localization'>
                     <option value={''}></option>
