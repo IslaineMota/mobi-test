@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import {Btn, Container, ContainForm, Input, Title, Select, Option } from './style'
 
 const useStateWithLocalStorage = localStorageKey => {
     const [values, setValues] = useState(
@@ -32,26 +33,26 @@ function Register() {
       };
 
     return (
-        <>
-            <form onSubmit={submitForm}>
-                <h1>Cadastro de Escolas</h1>
-                 <input type='text' name='school' value={values.school} placeholder='Nome da escola' required onChange={handleOnchange}></input>
-                <input type='text' name='director' value={values.director} placeholder='Nome do diretor' onChange={handleOnchange}></input>
-                <select required onChange={handleOnchange} name='localization'>
-                    <option value={''}></option>
-                    <option value={'1'}>Urbana</option>
-                    <option value={'2'}>Rural</option>
-                </select>
-                <select required onChange={handleOnchange} name='shift'>
-                    <option value={''}></option>
-                    <option value={'M'}>Manhã</option>
-                    <option value={'T'}>Tarde</option>
-                    <option value={'N'}>Noite</option>
-                    <option value={'I'}>Integral</option>
-                </select>
-                <button>Cadastrar</button>
-            </form>
-        </>
+        <Container>
+          <ContainForm onSubmit={submitForm}>
+            <Title>Cadastro</Title>
+            <Input type='text' name='school' value={values.school} placeholder='Nome da escola' required onChange={handleOnchange}></Input>
+            <Input type='text' name='director' value={values.director} placeholder='Nome do diretor' onChange={handleOnchange}></Input>
+            <Select required onChange={handleOnchange} name='localization'>
+              <Option value={''} disabled selectedex>Localidade</Option>
+              <Option value={'1'}>Urbana</Option>
+              <Option value={'2'}>Rural</Option>
+            </Select>
+            <Select required onChange={handleOnchange} name='shift'>
+              <Option value={''} disabled selected>Turno</Option>
+              <Option value={'M'}>Manhã</Option>
+              <Option value={'T'}>Tarde</Option>
+              <Option value={'N'}>Noite</Option>
+              <Option value={'I'}>Integral</Option>
+            </Select>
+            <Btn>Cadastrar</Btn>
+            </ContainForm>
+        </Container>
     )
 }
 
