@@ -59,7 +59,7 @@ function Register() {
         </Select>
         <Btn>Cadastrar</Btn>
       </ContainForm>
-      {/* <div>
+{/*       <div>
       {values.map((item, index) => {
           return (
             <ul key={index}>
