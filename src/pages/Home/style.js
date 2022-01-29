@@ -84,6 +84,10 @@ export const Btn = styled.button`
     }
 `;
 
+export const ContainResult = styled.div`
+    margin: auto;
+`;
+
 export const List = styled.li`
     font-size: 16px;
     padding: 5px 20px;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SearchInput from './SearchInput';
 import { FiSearch } from "react-icons/fi";
-import {Container,ImageMagnifyingGlass, ContainSearch, Title, List} from './style';
+import {Container,ImageMagnifyingGlass, ContainSearch, Title, ContainResult, List} from './style';
 import RegisterRouteBtn from './RegisterRouteBtn';
 import LoadingData from './LoadingData'
 
@@ -35,7 +35,7 @@ const Home = () => {
                     onChange={(str) => setName(str)} />
             </ContainSearch>
                 <RegisterRouteBtn/>
-                <span>
+                <ContainResult>
                 {loading
                     ? LoadingData()
                     : info.map((schools, index) => {
@@ -46,7 +46,7 @@ const Home = () => {
                         )
                     }
                     )}
-                </span>
+                </ContainResult>
         </Container>
 
     )};

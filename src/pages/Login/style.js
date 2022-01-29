@@ -15,7 +15,7 @@ export const Container = styled.div`
 export const ContainForm = styled.form`
     display: flex;
     width: 30vw;
-    height: 50vh;
+    min-height: 40vh;
     align-self: center;
     flex-direction: column;
     background: rgba(255, 255, 255, 0.90);
@@ -25,7 +25,6 @@ export const ContainForm = styled.form`
 
     @media screen and (max-width: 1100px) {
         width: 70vw;
-        height: 50vh;
   }
 `;
 
