@@ -2,14 +2,24 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
+    flex-direction: column;
+/*     width: 100vw;
+    height: 100vh; */
     margin: 0;
     overflow: hidden;
     background: linear-gradient(45deg,#b3e5fc,#9fa8da);
     font-family: Poppins;
+`;
+
+export const PlacementDiv = styled.div`
+    height: 100vh;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    flex-direction: column;
+    weight: 100vw;
+    margin: auto;
+  }
 `;
 
 export const ContainForm = styled.form`
@@ -89,3 +99,44 @@ export const Option = styled.option`
    transition: all 0.2s;
 } 
 `;
+
+export const ContainTable = styled.table`
+    display: flex;
+    min-width: 60vw;
+    font-size: 16px;
+    align-self: center;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.90);
+    padding: 30px;
+    border-radius: 5px;
+   /*  gap: 30px; */
+`;
+
+export const RowHead = styled.tr`
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  top: 0px;
+  bottom: 0px;
+  border-bottom: 0.1px solid #B7E6FC;
+`;
+
+export const TableHeader = styled.th`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0px;
+  width: 15vw;
+  /* width: ${props => props.width ? '20vw' : '10vw' }; */
+  /* border: 1px solid yellow; */
+`;
+
+export const TableBobyItems = styled(TableHeader)`
+    font-weight: 100;
+    /* border: 1px solid purple; */
+`;
+
+export const RowBody = styled(RowHead)`
+`;
+
